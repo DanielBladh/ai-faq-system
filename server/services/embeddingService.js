@@ -1,4 +1,3 @@
-// Cache the pipeline instance
 let embeddingPipeline;
 
 // Initialize the embedding model pipeline
