@@ -71,13 +71,13 @@ function App() {
     <div className="app">
       <header className="header">
         <h1>AI FAQ System</h1>
-        <p>Ask a question and get answers from our knowledge base</p>
+        <p>Ställ en fråga och få svar från vår kunskapsbas</p>
       </header>
 
       <main className="main">
         <QuestionForm onSubmit={handleQuestionSubmit} />
 
-        {loading && <div className="loading">Searching for answers...</div>}
+        {loading && <div className="loading">Söker efter svar...</div>}
 
         {error && <div className="error">{error}</div>}
 
@@ -85,7 +85,7 @@ function App() {
 
         <div className="faq-section">
           <div className="faq-header">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Vanliga frågor och svar</h2>
             <button
               className="add-faq-btn"
               onClick={() => setShowAddFAQ(!showAddFAQ)}

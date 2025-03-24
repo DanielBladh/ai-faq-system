@@ -17,7 +17,7 @@ const QuestionForm = ({ onSubmit }) => {
         type="text"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        placeholder="Ask a question..."
+        placeholder="Ställ en fråga..."
         className={styles.input}
         required
       />

@@ -9,7 +9,7 @@ const FAQList = ({ faqs, onDelete }) => {
   };
 
   if (!faqs.length) {
-    return <p className={styles.empty}>No FAQs available yet.</p>;
+    return <p className={styles.empty}>Inga FAQs tillgängliga än.</p>;
   }
 
   return (

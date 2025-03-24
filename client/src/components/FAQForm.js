@@ -26,7 +26,7 @@ const FAQForm = ({ onSubmit }) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.formGroup}>
-        <label htmlFor="question" className={styles.label}>Question:</label>
+        <label htmlFor="question" className={styles.label}>Fråga:</label>
         <input
           type="text"
           id="question"
@@ -39,7 +39,7 @@ const FAQForm = ({ onSubmit }) => {
       </div>
       
       <div className={styles.formGroup}>
-        <label htmlFor="answer" className={styles.label}>Answer:</label>
+        <label htmlFor="answer" className={styles.label}>Svar:</label>
         <textarea
           id="answer"
           name="answer"
@@ -52,7 +52,7 @@ const FAQForm = ({ onSubmit }) => {
       </div>
       
       <button type="submit" className={styles.button}>
-        Add FAQ
+        Lägg till FAQ
       </button>
     </form>
   );
