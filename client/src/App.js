@@ -77,7 +77,12 @@ function App() {
       <main className="main">
         <QuestionForm onSubmit={handleQuestionSubmit} />
 
-        {loading && <div className="loading">Söker efter svar...</div>}
+        {loading && (
+          <div className="loading-container">
+            <div className="spinner"></div>
+            <p className="loading-text">Söker efter svar...</p>
+          </div>
+        )}
 
         {error && <div className="error">{error}</div>}
 
@@ -90,7 +95,7 @@ function App() {
               className="add-faq-btn"
               onClick={() => setShowAddFAQ(!showAddFAQ)}
             >
-              {showAddFAQ ? "Cancel" : "Add FAQ"}
+              {showAddFAQ ? "Avbryt" : "Lägg till FAQ"}
             </button>
           </div>
 
