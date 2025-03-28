@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ThemeProvider, useTheme } from "./context/ThemeContext"; // Adjust import path
 import "./styles/App.css";
 import QuestionForm from "./components/QuestionForm";
 import AnswerDisplay from "./components/AnswerDisplay";
@@ -6,6 +7,21 @@ import FAQList from "./components/FAQList";
 import FAQForm from "./components/FAQForm";
 import FileUploader from "./components/fileUpload";
 import { queryFAQ, getAllFAQs, addFAQ, deleteFAQ } from "./services/api";
+
+// Theme Toggle Component
+const ThemeToggle = () => {
+  const { isDarkMode, toggleTheme } = useTheme();
+
+  return (
+    <button
+      onClick={toggleTheme}
+      className="theme-toggle"
+      aria-label="Toggle dark mode"
+    >
+      {isDarkMode ? "☀️" : "🌙"}
+    </button>
+  );
+};
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -70,6 +86,8 @@ function App() {
 
   return (
     <div className="app">
+      <ThemeToggle />
+
       <header className="header">
         <h1>AI FAQ System</h1>
         <p>Ställ en fråga och få svar från vår kunskapsbas</p>
@@ -110,4 +128,13 @@ function App() {
   );
 }
 
-export default App;
+// Wrap the App with ThemeProvider
+function AppWrapper() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
+
+export default AppWrapper;
