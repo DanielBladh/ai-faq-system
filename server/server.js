@@ -1,13 +1,15 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const { createClient } = require('@supabase/supabase-js');
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
 
 // Routes import
-const faqRoutes = require('./routes/faqRoutes');
+const faqRoutes = require("./routes/faqRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 // Load environment variables
 dotenv.config();
+
+const { supabase } = require("./supabaseClient"); // Import the supabase client from supabaseClient.js
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,11 +17,8 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-
-// Initialize Supabase client
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+app.use(express.urlencoded({ extended: true }));
+app.use("/api/upload", uploadRoutes);
 
 // Make supabase client available to all routes
 app.use((req, res, next) => {
@@ -28,11 +27,12 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/faq', faqRoutes);
+app.use("/api/faq", faqRoutes);
+app.use("/api/upload", uploadRoutes); // Add this line
 
 // Basic route for testing
-app.get('/', (req, res) => {
-  res.send('AI FAQ System API is running');
+app.get("/", (req, res) => {
+  res.send("AI FAQ System API is running");
 });
 
 // Start server

@@ -4,6 +4,7 @@ import QuestionForm from "./components/QuestionForm";
 import AnswerDisplay from "./components/AnswerDisplay";
 import FAQList from "./components/FAQList";
 import FAQForm from "./components/FAQForm";
+import FileUploader from "./components/fileUpload";
 import { queryFAQ, getAllFAQs, addFAQ, deleteFAQ } from "./services/api";
 
 function App() {
@@ -102,6 +103,7 @@ function App() {
           {showAddFAQ && <FAQForm onSubmit={handleAddFAQ} />}
 
           <FAQList faqs={faqs} onDelete={handleDeleteFAQ} />
+          <FileUploader userId="temporary-user-id" />
         </div>
       </main>
     </div>

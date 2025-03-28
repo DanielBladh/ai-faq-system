@@ -1,5 +1,5 @@
 // client/src/services/api.js
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 // Function to query FAQ
 export const queryFAQ = async (question) => {
