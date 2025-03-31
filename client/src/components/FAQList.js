@@ -9,7 +9,7 @@ const FAQList = ({ faqs, onDelete }) => {
   };
 
   const handleDelete = (e, id) => {
-    e.stopPropagation(); // Förhindra att FAQ öppnas vid radering
+    e.stopPropagation(); 
     if (window.confirm("Är du säker på att du vill radera denna FAQ?")) {
       onDelete(id);
     }

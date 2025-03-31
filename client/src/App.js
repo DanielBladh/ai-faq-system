@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ThemeProvider, useTheme } from "./context/ThemeContext"; // Adjust import path
+import { ThemeProvider, useTheme } from "./context/ThemeContext"; 
 import "./styles/App.css";
 import QuestionForm from "./components/QuestionForm";
 import AnswerDisplay from "./components/AnswerDisplay";
