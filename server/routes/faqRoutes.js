@@ -1,4 +1,3 @@
-// server/routes/faqRoutes.js
 const express = require('express');
 const faqController = require('../controllers/faqController');
 

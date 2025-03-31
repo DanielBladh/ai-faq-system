@@ -9,7 +9,7 @@ const uploadRoutes = require("./routes/uploadRoutes");
 // Load environment variables
 dotenv.config();
 
-const { supabase } = require("./supabaseClient"); // Import the supabase client from supabaseClient.js
+const { supabase } = require("./supabaseClient"); 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
